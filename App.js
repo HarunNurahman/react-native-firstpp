@@ -1,112 +1,149 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+/* eslint-disable react-native/no-inline-styles */
+import React, {Component} from 'react';
+import {Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import rtx3090 from './rtx3090.jpg';
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+const App = () => {
+  return <StylingExample />;
+};
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+const StylingExample = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View>
+      {/* <Text style={Style.text}>StylingExample</Text>
+      <View
+        style={{
+          width: 100,
+          height: 100,
+          backgroundColor: '#8e44ad',
+          borderWidth: 2,
+          borderColor: 'black',
+          marginLeft: 24,
+          marginTop: 8,
+        }}
+      /> */}
+      <View
+        style={{
+          padding: 12,
+          backgroundColor: '#f2f2f2',
+          width: 212,
+          borderRadius: 8,
+        }}>
+        <Image
+          source={rtx3090}
+          style={{
+            width: 188,
+            height: 107,
+            borderRadius: 8,
+          }}
+        />
+        {/* Title */}
+        <Text
+          style={{
+            fontSize: 14,
+            fontWeight: 'bold',
+            marginTop: 16,
+            color: 'black',
+          }}>
+          GeForce RTX 3090 Graphics Card
+        </Text>
+        {/* Price */}
+        <Text
+          style={{
+            fontSize: 12,
+            fontWeight: 'bold',
+            color: '#F2994A',
+            marginTop: 14,
+          }}>
+          Starting At $1,499
+        </Text>
+        {/* Location */}
+        <Text
+          style={{
+            fontSize: 12,
+            fontWeight: 'bold',
+            marginTop: 6,
+          }}>
+          Bandung, Jawa Barat
+        </Text>
+        {/* Button Buy */}
+        <View
+          style={{
+            backgroundColor: '#27ae60',
+            paddingVertical: 6,
+            borderRadius: 20,
+            marginTop: 20,
+          }}>
+          <Text
+            style={{
+              fontSize: 14,
+              fontWeight: '600',
+              color: 'white',
+              textAlign: 'center',
+            }}>
+            Buy it Now!
+          </Text>
+        </View>
+      </View>
     </View>
   );
 };
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+const Style = StyleSheet.create({
+  text: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    fontFamily: 'Montserrat',
+    marginLeft: 24,
+    marginTop: 16,
+  },
+});
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+const SampleComponent = () => {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <View>
+      <View style={{width: 90, height: 90, backgroundColor: '#27ae60'}} />
+      <Text>Harun</Text>
+      <NamaBelakang />
+      <Photo />
+      <TextInput style={{borderWidth: 1}} />
+      <Box />
+      <Profile />
+    </View>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const Photo = () => {
+  return (
+    <Image
+      source={{uri: 'https://placeimg.com/64/64/tech'}}
+      style={{width: 64, height: 64}}
+    />
+  );
+};
+
+const NamaBelakang = () => {
+  return <Text>Nurahman</Text>;
+};
+
+class Box extends Component {
+  render() {
+    return <Text>Ini Component dari Class</Text>;
+  }
+}
+
+class Profile extends Component {
+  render() {
+    return (
+      <View>
+        <Image
+          source={{uri: 'https://placeimg.com/100/100/people'}}
+          style={{width: 100, height: 100}}
+        />
+        <Text>Sepeda</Text>
+      </View>
+    );
+  }
+}
 
 export default App;
