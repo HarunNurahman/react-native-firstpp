@@ -1,9 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {Image, Text, View} from 'react-native';
-import rtx3090 from './rtx3090.jpg';
+import React from "react";
+import { Image, Text, View } from "react-native";
 
-const StylingExample = () => {
+import rtx from "../../assets/images/rtx.jpg";
+
+const DesignComponentReact = () => {
   return (
     <View>
       {/* <Text style={Style.text}>StylingExample</Text>
@@ -21,12 +22,13 @@ const StylingExample = () => {
       <View
         style={{
           padding: 12,
-          backgroundColor: '#f2f2f2',
+          backgroundColor: "#f2f2f2",
           width: 212,
           borderRadius: 8,
-        }}>
+        }}
+      >
         <Image
-          source={rtx3090}
+          source={rtx}
           style={{
             width: 188,
             height: 107,
@@ -37,46 +39,51 @@ const StylingExample = () => {
         <Text
           style={{
             fontSize: 14,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             marginTop: 16,
-            color: 'black',
-          }}>
+            color: "black",
+          }}
+        >
           GeForce RTX 3090 Graphics Card
         </Text>
         {/* Price */}
         <Text
           style={{
             fontSize: 12,
-            fontWeight: 'bold',
-            color: '#F2994A',
+            fontWeight: "bold",
+            color: "#F2994A",
             marginTop: 14,
-          }}>
+          }}
+        >
           Starting At $1,499
         </Text>
         {/* Location */}
         <Text
           style={{
             fontSize: 12,
-            fontWeight: 'bold',
+            fontWeight: "bold",
             marginTop: 6,
-          }}>
+          }}
+        >
           Bandung, Jawa Barat
         </Text>
         {/* Button Buy */}
         <View
           style={{
-            backgroundColor: '#27ae60',
+            backgroundColor: "#27ae60",
             paddingVertical: 6,
             borderRadius: 20,
             marginTop: 20,
-          }}>
+          }}
+        >
           <Text
             style={{
               fontSize: 14,
-              fontWeight: '600',
-              color: 'white',
-              textAlign: 'center',
-            }}>
+              fontWeight: "600",
+              color: "white",
+              textAlign: "center",
+            }}
+          >
             Buy it Now!
           </Text>
         </View>
@@ -85,4 +92,4 @@ const StylingExample = () => {
   );
 };
 
-export default StylingExample;
+export default DesignComponentReact;
